@@ -88,10 +88,7 @@ const users1 = [
       for (const product of products) {
         if (product.name == name) {
           if (product.likes.includes(this._id)) {
-            return product.likes.splice(
-              product.likes.indexOf("this._id"),
-              1
-            );
+            return product.likes.splice(product.likes.indexOf("this._id"), 1);
           } else {
             return product.likes.push(this._id);
           }
@@ -120,10 +117,7 @@ const users1 = [
       for (const product of products) {
         if (product.name == name) {
           if (product.likes.includes(this._id)) {
-            return product.likes.splice(
-              product.likes.indexOf("this._id"),
-              1
-            );
+            return product.likes.splice(product.likes.indexOf("this._id"), 1);
           } else {
             return product.likes.push(this._id);
           }
@@ -152,10 +146,7 @@ const users1 = [
       for (const product of products) {
         if (product.name == name) {
           if (product.likes.includes(this._id)) {
-            return product.likes.splice(
-              product.likes.indexOf("this._id"),
-              1
-            );
+            return product.likes.splice(product.likes.indexOf("this._id"), 1);
           } else {
             return product.likes.push(this._id);
           }
@@ -184,10 +175,7 @@ const users1 = [
       for (const product of products) {
         if (product.name == name) {
           if (product.likes.includes(this._id)) {
-            return product.likes.splice(
-              product.likes.indexOf("this._id"),
-              1
-            );
+            return product.likes.splice(product.likes.indexOf("this._id"), 1);
           } else {
             return product.likes.push(this._id);
           }
@@ -216,10 +204,7 @@ const users1 = [
       for (const product of products) {
         if (product.name == name) {
           if (product.likes.includes(this._id)) {
-            return product.likes.splice(
-              product.likes.indexOf("this._id"),
-              1
-            );
+            return product.likes.splice(product.likes.indexOf("this._id"), 1);
           } else {
             return product.likes.push(this._id);
           }
@@ -402,5 +387,13 @@ function signIn(email, password) {
   return "User doesnt exist";
 }
 
-console.log(users1[3].likeProduct("TV"));
-console.log(products);
+function averageRating(product) {
+  let totalRating = 0;
+  for (rate of product.ratings) {
+    totalRating += rate.rate;
+  }
+  return totalRating / product.ratings.length;
+}
+
+// console.log(users1[1].likeProduct("TV"));
+console.log(averageRating(products[0]));
