@@ -1,3 +1,4 @@
+include('countries.js');
 /*
 Higher Order Function
 Higher order functions are functions which take other function as a parameter or return a function as a value. The function passed as a parameter is called callback.
@@ -129,7 +130,7 @@ users.sort((a, b) => a.age - b.age);
 
 /* __________________________EXCERSICES_________________ */
 
-const countries = ["Finland", "Sweden", "Denmark", "Norway", "IceLand"];
+const countries2 = ["Finland", "Sweden", "Denmark", "Norway", "IceLand"];
 const names0 = ["Asabeneh", "Mathias", "Elias", "Brook"];
 const numbers0 = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
 const products = [
@@ -149,11 +150,11 @@ const products = [
 numbers0.reduce((accumulator, currentValue) => accumulator + currentValue);
 // );
 
-// Use reduce to concatenate all the countries and to produce this sentence: Estonia, Finland, Sweden, Denmark, Norway, and IceLand are north European countries
+// Use reduce to concatenate all the countries2 and to produce this sentence: Estonia, Finland, Sweden, Denmark, Norway, and IceLand are north European countries2
 
-let concatenatedCountries = countries.reduce((accumulator, currentValue) => {
-  if (countries.indexOf(currentValue) == countries.length - 1) {
-    accumulator += ` and ${currentValue} are European countries`;
+let concatenatedcountries2 = countries2.reduce((accumulator, currentValue) => {
+  if (countries2.indexOf(currentValue) == countries2.length - 1) {
+    accumulator += ` and ${currentValue} are European countries2`;
   } else {
     accumulator += ", " + currentValue;
   }
@@ -164,6 +165,19 @@ let concatenatedCountries = countries.reduce((accumulator, currentValue) => {
 
 // Find the total price of products by chaining two or more array iterators(eg. arr.map(callback).filter(callback).reduce(callback))
 let sum1 = 0;
-products.filter((element) => typeof element.price == "number").forEach(element => sum1+=element.price );
+products
+  .filter((element) => typeof element.price == "number")
+  .forEach((element) => (sum1 += element.price));
 
+// console.log(sum1);
+// Find the sum of price of products using only reduce reduce(callback))
+
+sum1 = products.reduce((accumulator, currentValue) => {
+  if (typeof currentValue.price == "number") {
+    accumulator += currentValue.price;
+  }
+  return accumulator;
+}, 0);
+
+console.log(countries);
 // console.log(sum1);
