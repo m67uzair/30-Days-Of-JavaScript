@@ -1,4 +1,3 @@
-
 /*
 Higher Order Function
 Higher order functions are functions which take other function as a parameter or return a function as a value. The function passed as a parameter is called callback.
@@ -31,7 +30,8 @@ const higherOrder = (n) => {
 };
 // console.log(higherOrder(2)(3)(10));
 
-const arr = [1, 2, 3, 4, 5];
+const numbers = [1, 2, 3, 4, 5];
+const arr = [1, 2, 3, 4, 5, 6];
 const sum = numbers.reduce((accumulator, currentValue, index, array) => {
   // console.log(`${accumulator} ${currentValue} ${index} ${array}`);
   return accumulator + currentValue;
@@ -44,25 +44,24 @@ const areAllStr = names.every((name) => typeof name === "string"); // Are all st
 
 // console.log(areAllStr);
 
-
 const areAllStr1 = names.some((name) => typeof name === "number"); // Are all strings ? // does he mean are some numbers?
 
 // console.log(areAllStr1) // false // no! all are strings.
 
 arr.forEach(function (element, index, arr) {
   // console.log(index, element, arr)
-})
+});
 // The above code can be written using arrow function
 arr.forEach((element, index, arr) => {
   // console.log(index, element, arr)
-})
+});
 // The above code can be written using arrow function and explicit return
 
 // arr.forEach((element, index, arr) => console.log(index, element, arr))
 
 let sum2 = 0;
 const numbers2 = [1, 2, 3, 4, 5];
-numbers.forEach(num => sum2 += num)
+numbers.forEach((num) => (sum2 += num));
 
 // console.log(sum)
 
@@ -73,8 +72,8 @@ numbers.forEach(num => sum2 += num)
 const modifiedArray = arr.map((element,index) => element);
 */
 //Example
-const numbers3 = [1, 2, 3, 4, 5]
-const numbersSquare = numbers3.map((num) => num * num)
+const numbers3 = [1, 2, 3, 4, 5];
+const numbersSquare = numbers3.map((num) => num * num);
 
 // console.log(numbersSquare)
 
@@ -87,8 +86,6 @@ since map retruns and array, function chaining i.e arr.map(callback(element)).so
 
 
 */
-
-
 
 var numbers1 = [1, 5, 3.14];
 
@@ -110,16 +107,16 @@ Because you can provide your own compare() function, it is possible to sort arbi
 */
 
 const users = [
-  { name: 'Asabeneh', age: 150 },
-  { name: 'Brook', age: 50 },
-  { name: 'Eyob', age: 100 },
-  { name: 'Elias', age: 22 },
-]
+  { name: "Asabeneh", age: 150 },
+  { name: "Brook", age: 50 },
+  { name: "Eyob", age: 100 },
+  { name: "Elias", age: 22 },
+];
 users.sort((a, b) => {
-  if (a.age < b.age) return -1
-  if (a.age > b.age) return 1
-  return 0
-})
+  if (a.age < b.age) return -1;
+  if (a.age > b.age) return 1;
+  return 0;
+});
 
 /*
 OR
@@ -130,20 +127,43 @@ users.sort((a, b) => a.age - b.age);
 // console.log(users) // sorted ascending
 // [{…}, {…}, {…}, {…}]
 
-
 /* __________________________EXCERSICES_________________ */
 
-const countries = ['Finland', 'Sweden', 'Denmark', 'Norway', 'IceLand']
-const names0 = ['Asabeneh', 'Mathias', 'Elias', 'Brook']
-const numbers0 = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+const countries = ["Finland", "Sweden", "Denmark", "Norway", "IceLand"];
+const names0 = ["Asabeneh", "Mathias", "Elias", "Brook"];
+const numbers0 = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
 const products = [
-  { product: 'banana', price: 3 },
-  { product: 'mango', price: 6 },
-  { product: 'potato', price: ' ' },
-  { product: 'avocado', price: 8 },
-  { product: 'coffee', price: 10 },
-  { product: 'tea', price: '' },
+  { product: "banana", price: 3 },
+  { product: "mango", price: 6 },
+  { product: "potato", price: "" },
+  { product: "avocado", price: 8 },
+  { product: "coffee", price: 10 },
+  { product: "tea", price: "" },
 ];
 
+// console.log(typeof products[0].price);
 
-console.log( products[0].price);
+// Use reduce to sum all the numbers in the numbers array.
+
+// console.log(
+numbers0.reduce((accumulator, currentValue) => accumulator + currentValue);
+// );
+
+// Use reduce to concatenate all the countries and to produce this sentence: Estonia, Finland, Sweden, Denmark, Norway, and IceLand are north European countries
+
+let concatenatedCountries = countries.reduce((accumulator, currentValue) => {
+  if (countries.indexOf(currentValue) == countries.length - 1) {
+    accumulator += ` and ${currentValue} are European countries`;
+  } else {
+    accumulator += ", " + currentValue;
+  }
+  return accumulator;
+}, `Estonia`);
+
+// console.log(concatenatedCountries);
+
+// Find the total price of products by chaining two or more array iterators(eg. arr.map(callback).filter(callback).reduce(callback))
+let sum1 = 0;
+products.filter((element) => typeof element.price == "number").forEach(element => sum1+=element.price );
+
+// console.log(sum1);
