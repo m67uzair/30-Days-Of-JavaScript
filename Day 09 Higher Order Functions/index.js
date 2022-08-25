@@ -1,4 +1,3 @@
-include('countries.js');
 /*
 Higher Order Function
 Higher order functions are functions which take other function as a parameter or return a function as a value. The function passed as a parameter is called callback.
@@ -179,5 +178,4 @@ sum1 = products.reduce((accumulator, currentValue) => {
   return accumulator;
 }, 0);
 
-console.log(countries);
 // console.log(sum1);
