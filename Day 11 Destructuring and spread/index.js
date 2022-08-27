@@ -107,13 +107,14 @@ function convertArrayofArraysIntoArrayOfObjects(...array) {
   return studentsObjectArray;
 }
 
-function convertArrayIntoObject(...array) {
-  for (const [name, skills, scores] of array) {
-    return { name, skills, scores };
-  }
+function convertArrayIntoObject(array) {
+
+  let [name,skills,scores] = array;
+  return {name,skills,scores}
 }
 
 let studentObject = convertArrayIntoObject(student);
+console.log(studentObject);
 
 /*
 Copy the student object to newStudent without mutating the original object. In the new object add the following ?
@@ -157,4 +158,4 @@ let newStudent2 = {
   },
 };
 
-console.log(newStudent2);
+// console.log(newStudent2);
