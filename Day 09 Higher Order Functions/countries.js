@@ -2054,3 +2054,24 @@ console.log(newcountries);
 // }
 
 // console.log(categorizeCountries(countries));
+
+// Find out which letter is used many times as initial for a country name from the countries array (eg. Finland, Fiji, France etc)
+
+let letterObject = {};
+let letterArray = [];
+
+countries.forEach((country) => {
+  if (letterObject.hasOwnProperty(country.name.charAt(0)))
+    letterObject[country.name.charAt(0)] += 1;
+  else letterObject[country.name.charAt(0)] = 1;
+});
+
+letterArray = Object.entries(letterObject);
+
+letterArray.sort((a, b) => b[1] - a[1]);
+
+console.log(letterArray);
+
+console.log(
+  `Most used letter is ${letterArray[0][0]}, which was used ${letterArray[0][1]} times`
+);

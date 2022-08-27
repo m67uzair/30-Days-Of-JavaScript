@@ -54,4 +54,16 @@ const users = [
 
 let [e, pi, gravity, humanBodyTemp, waterBoilingTemp] = constants;
 
-console.log(e, pi, gravity, humanBodyTemp, waterBoilingTemp);
+// console.log(e, pi, gravity, humanBodyTemp, waterBoilingTemp);
+
+// Destructure and assign the elements of countries array to fin, est, sw, den, nor
+
+let [fin,est,sw,den,nor] = countries;
+
+// console.log(fin,est,sw,den);
+
+// Destructure the rectangle object by its properties or keys.
+
+let {width,height:h,area,perimeter} = rectangle;
+
+// console.log(width,h);
