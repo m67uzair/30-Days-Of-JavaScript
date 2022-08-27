@@ -2076,6 +2076,7 @@ console.log(
   `Most used letter is ${letterArray[0][0]}, which was used ${letterArray[0][1]} times`
 );
 
-for (const {name,capital,population,languages} of countries) {
-  console.log(name,capital,population,languages);
+for (const { name, capital, population, languages } of countries) {
+  console.log(name, capital, population, languages);
 }
+
