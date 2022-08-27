@@ -2114,3 +2114,4 @@ function mostSpokenLanguages(number) {
     console.log(allSpokenlanguages[i]);
   }
 }
+mostSpokenLanguages(10);
