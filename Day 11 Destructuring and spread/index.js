@@ -67,3 +67,16 @@ let [fin,est,sw,den,nor] = countries;
 let {width,height:h,area,perimeter} = rectangle;
 
 // console.log(width,h);
+
+// Iterate through the users array and get all the keys of the object using destructuring
+
+for (const {name,scores,skills,age} of users) {
+  console.log(name,scores,skills,age);
+}
+
+// Find the persons who have less than two skills
+for (const {name,scores,skills,age} of users) {
+  if(skills.length<2)
+  console.log(`${name} has less than 2 skills`);
+}
+
