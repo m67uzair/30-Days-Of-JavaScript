@@ -2114,4 +2114,21 @@ function mostSpokenLanguages(number) {
     console.log(allSpokenlanguages[i]);
   }
 }
-mostSpokenLanguages(10);
+// mostSpokenLanguages(10);
+
+function mostPopulatedCountries(number) {
+  let allCountries = [];
+  let index = -1;
+
+  allCountries = countries
+    .map((country) => {
+      return { country: country.name, population: country.population };
+    })
+    .sort((a, b) => b.population - a.population);
+
+  for (let i = 0; i < number; i++) {
+    console.log(allCountries[i]);
+  }
+}
+
+mostPopulatedCountries(10);
