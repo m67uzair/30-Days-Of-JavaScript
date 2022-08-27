@@ -2029,7 +2029,7 @@ countrySuffixArray after being filtered
 */
 
 let sortedCountries = countries;
-console.log(countrySuffixArray);
+// console.log(countrySuffixArray);
 let newcountries = [];
 function catagoriseCountries() {
   for (let i = 0; i < countrySuffixArray.length; i++) {
@@ -2043,7 +2043,7 @@ function catagoriseCountries() {
 
 catagoriseCountries();
 // console.log(countrySuffixArray);
-console.log(newcountries);
+// console.log(newcountries);
 // console.log(newcountries);
 
 // const categorizeCountries = (countries) => {
@@ -2070,13 +2070,47 @@ letterArray = Object.entries(letterObject);
 
 letterArray.sort((a, b) => b[1] - a[1]);
 
-console.log(letterArray);
+// console.log(letterArray);
 
-console.log(
-  `Most used letter is ${letterArray[0][0]}, which was used ${letterArray[0][1]} times`
-);
+// console.log(
+//   `Most used letter is ${letterArray[0][0]}, which was used ${letterArray[0][1]} times`
+// );
 
-for (const { name, capital, population, languages } of countries) {
-  console.log(name, capital, population, languages);
+// for (const { name, capital, population, languages } of countries) {
+//   console.log(name, capital, population, languages);
+// }
+
+// *** Find the 10 most spoken languages:
+
+function mostSpokenLanguages(number) {
+  //Declaring Variables
+  let allSpokenlanguages = [];
+  let index = -1;
+
+  //traversing each country object
+  countries.forEach((country) => {
+    // traversing each language in the array of country.languages in each country object.
+    for (const language of country.languages) {
+      //finding the index of the langauge to check if its present in the allSpokenLanguages array or not, if not present it will return -1
+      index = allSpokenlanguages.findIndex(
+        (languageObject) => languageObject.language === language
+      );
+
+      if (index == -1) {
+        // if the language is not present in the array, make an object for it, initialising it's count to 1 and push it in the array.
+        allSpokenlanguages.push({ language: language, count: 1 });
+      } else {
+        // if it's present, increase its count.
+        allSpokenlanguages[index].count += 1;
+      }
+    }
+  });
+
+  //sort all the languages in descending order.
+  allSpokenlanguages.sort((a, b) => b.count - a.count);
+
+  for (let i = 0; i < number; i++) {
+    // print the X most spoken languages where x is the number specified in the argument
+    console.log(allSpokenlanguages[i]);
+  }
 }
-
