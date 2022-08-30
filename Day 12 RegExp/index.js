@@ -47,7 +47,31 @@ function calculateSalary(array) {
       annualIncome = string.match(getIncome)[0];
     }
   }
-  return (parseInt(monthlyIncome) + parseInt(annualIncome));
+  return parseInt(monthlyIncome) + parseInt(annualIncome);
 }
 
-console.log("The annual income is: "+calculateSalary(matches));
+// console.log("The annual income is: "+calculateSalary(matches));
+
+txt =
+  "The position of some particles on the horizontal x-axis -12, -4, -3 and -1 in the negative direction, 0 at origin, 4 and 8 in the positive direction. Extract these numbers and find the distance between the two furthest particles.";
+
+pattern = /-?\d/g;
+
+matches = txt.match(pattern);
+
+matches = matches.map((number) => parseInt(number)).sort((a, b) => a - b);
+
+console.log(matches);
+
+// Write a pattern which identify if a string is a valid JavaScript variable
+
+function isVariable(varr) {
+  let varPattern = /^[a-zA-Z$_]+[\w_]*$/g;
+  if (varPattern.test(varr)) {
+    return `${varr} is allowed as an variable name`;
+  } else {
+    return `${varr} is not allowed as an variable name`;
+  }
+}
+
+console.log(isVariable("firstname"));
