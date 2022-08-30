@@ -11,6 +11,6 @@ matches = txt.match(pattern);
 console.log(matches); // ['and banana are fruits']
 
 txt = "This regular expression example was made in December 6,  2019";
-pattern = /\b[^0-9]\w{4}\b/g; //  exactly four character  words without numbers
+pattern = /\b[A-Za-z]{4}\b/g; //  exactly four character  words without numbers // /\b[^\d ]{4}\b/g
 matches = txt.match(pattern);
 console.log(matches); //['This', 'made']
