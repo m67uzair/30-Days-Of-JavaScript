@@ -74,4 +74,27 @@ function isVariable(varr) {
   }
 }
 
-console.log(isVariable("firstname"));
+// console.log(isVariable("firstname"));
+function mostFrequentWords(text, count) {
+  txt = text;
+
+  pattern = /\w+/g;
+
+  matches = txt.match(pattern);
+  let wordCount = [];
+  matches.forEach((word) => {
+    let index = wordCount.findIndex((wordObject) => wordObject.word === word);
+
+    if (index == -1) {
+      wordCount.push({ word: word, count: 1 });
+    } else {
+      wordCount[index].count++;
+    }
+  });
+  wordCount.sort((a, b) => b.count - a.count);
+  for (let i = 0; i < count; i++) {
+    console.log(wordCount[i]);
+  }
+}
+let para =   "I love teaching. If you do not love teaching what else can you love. I love Python if you do not love something which can give you all the capabilities to develop an application what else can you love.";
+// mostFrequentWords(para,10);
