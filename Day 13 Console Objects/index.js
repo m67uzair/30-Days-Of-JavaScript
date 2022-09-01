@@ -149,3 +149,22 @@ console.group("Users");
 console.log(user);
 console.log(users);
 console.groupEnd();
+
+console.clear();
+// Display the countries array as a table
+// Display the countries object as a table
+// Use console.group() to group logs
+
+console.group('Excersice level 1')
+console.table(countries);
+console.table(user);
+console.groupEnd();
+
+// 0 > 2 * 10 use console.assert()
+
+console.assert(0>2*10,'0 is not greater than 20');
+
+// Write a warning message using console.warn()
+console.warn('wrong assertion, try again');
+// Write an error message using console.error()
+console.error('This is an error msg');
