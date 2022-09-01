@@ -168,3 +168,20 @@ console.assert(0>2*10,'0 is not greater than 20');
 console.warn('wrong assertion, try again');
 // Write an error message using console.error()
 console.error('This is an error msg');
+
+console.clear();
+
+const throwErrorExampleFun = () => {
+  let message ='';
+  let x = prompt("Enter a number: ");
+  try {
+    if (x == "") throw "empty";
+    if (isNaN(x)) throw "not a number";
+    x = Number(x);
+    if (x < 5) throw "too low";
+    if (x > 10) throw "too high";
+  } catch (err) {
+    console.log(err);
+  }
+};
+throwErrorExampleFun();
