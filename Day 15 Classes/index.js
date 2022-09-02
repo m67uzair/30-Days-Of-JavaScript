@@ -116,3 +116,50 @@ console.log(s1.getPersonInfo());
 s2.saySomething();
 console.log(s2.getFullName());
 console.log(s2.getPersonInfo());
+
+console.clear();
+
+class Animal {
+  constructor(species, age, legs, color, sound) {
+    this.name = "bobby";
+    this.species = species;
+    this.breed = "";
+    this.age = age;
+    this.legs = legs;
+    this.color = color;
+    this.sound = sound;
+  }
+
+  getAnimalInfo() {
+    let info = "";
+    let addiontnalInfo = "";
+    info = `This is ${this.name}, He is ${this.age} years old, has ${this.legs} legs, and has a ${this.color} color, His favorite sound is ${this.sound}`;
+    addiontnalInfo =
+      this.breed != "" && `. ${this.name} is a${this.breed}${this.species}`;
+
+    return addiontnalInfo ? info + addiontnalInfo : info;
+  }
+
+  set setName(name) {
+    this.name = name;
+  }
+  set setBreed(breed) {
+    this.breed = ` ${breed} `;
+  }
+
+  get getName() {
+    return this.name;
+  }
+  get getBreed() {
+    return this.breed;
+  }
+}
+const cat = new Animal("Cat", 4, 4, "Brown", "Meow");
+
+console.log(cat);
+console.log(cat.getAnimalInfo());
+
+cat.setBreed = "Pussy";
+cat.setName = "tommy";
+
+console.log(cat.getAnimalInfo());
