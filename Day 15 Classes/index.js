@@ -163,3 +163,21 @@ cat.setBreed = "Pussy";
 cat.setName = "tommy";
 
 console.log(cat.getAnimalInfo());
+
+console.clear();
+
+class PersonAccount{
+  constructor(firstName, lastName, incomes,expenses){
+    this.firstName = firstName;
+    this.lastName = lastName;
+    this.incomes = incomes;
+    this.expenses = expenses;
+  }
+  totalIncome(){}
+  totalExpense(){}
+  accountInfo(){}
+  addIncome(){}
+  addExpense(){}
+  accountBalance(){}
+}
+
