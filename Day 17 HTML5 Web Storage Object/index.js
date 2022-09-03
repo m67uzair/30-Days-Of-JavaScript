@@ -13,3 +13,17 @@ localStorage.setItem("skills", skillJSON);
 console.log(skillJSON);
 console.log(localStorage.getItem("skills"));
 console.log(localStorage);
+
+console.clear();
+
+const user = {
+  firstName: "Asabeneh",
+  age: 250,
+  skills: ["HTML", "CSS", "JS", "React"],
+};
+
+const userText = JSON.stringify(user, undefined, 4);
+localStorage.setItem("user", userText);
+
+console.log(localStorage);
+console.log(localStorage.user);
