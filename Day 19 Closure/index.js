@@ -14,48 +14,74 @@
 // console.log(innerFunc())
 
 console.clear();
-function outerFunction() {
-    let count = 0;
-    function plusOne() {
-        count++
-        return count
-    }
-    function minusOne() {
-        count--
-        return count
-    }
+// function outerFunction() {
+//     let count = 0;
+//     function plusOne() {
+//         count++
+//         return count
+//     }
+//     function minusOne() {
+//         count--
+//         return count
+//     }
 
-    return {
-        plusOne:plusOne(),
-        minusOne:minusOne()
-    }
-}
-const innerFuncs = outerFunction()
+//     return {
+//         plusOne:plusOne(),
+//         minusOne:minusOne()
+//     }
+// }
+// const innerFuncs = outerFunction()
 
-console.log(outerFunction().plusOne)
-console.log(outerFunction().minusOne)
-console.log(innerFuncs.plusOne)
-console.clear();
+// console.log(outerFunction().plusOne)
+// console.log(outerFunction().minusOne)
+// console.log(innerFuncs.plusOne)
+// console.clear();
 
-// Exercises: Level 1
-// Create a closure which has one inner function
+// // Exercises: Level 1
+// // Create a closure which has one inner function
 
-function closureFunction() {
-    let str = 'this is outer fun variable';
+// function closureFunction() {
+//     let str = 'this is outer fun variable';
 
-    function innerFun() {
-        str += 'modified by inneer fun'
-        return str;
-    }
+//     function innerFun() {
+//         str += 'modified by inneer fun'
+//         return str;
+//     }
 
-    return innerFun;
+//     return innerFun;
 
-}
+// }
 
-const outerFun = closureFunction()
+// const outerFun = closureFunction()
 
-console.log(outerFun());
+// console.log(outerFun());
 
 // Have to return the inner fun in the outer function after defining it.
 // if two functions, return them like a object with a key assignment to their names
 
+// Exercises: Level 2
+// Create a closure which has three inner functions
+
+function funWith3Closures() {
+    let str= "Hi, ";
+    function name() {
+        str+="I'm M Uzair";
+        return str;
+    }
+    function education() {
+        return str+=", a software engineer";
+    }
+    function location() {
+        return str+=", from Pakistan.";
+    }
+
+    return {
+        name : name(),
+        education: education(),
+        location: location()
+    }
+}
+const meFun = funWith3Closures();
+console.log(meFun.name);
+console.log(meFun.education);
+console.log(meFun.location);
