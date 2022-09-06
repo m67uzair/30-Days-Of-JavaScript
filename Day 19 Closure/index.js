@@ -36,3 +36,26 @@ console.log(outerFunction().plusOne)
 console.log(outerFunction().minusOne)
 console.log(innerFuncs.plusOne)
 console.clear();
+
+// Exercises: Level 1
+// Create a closure which has one inner function
+
+function closureFunction() {
+    let str = 'this is outer fun variable';
+
+    function innerFun() {
+        str += 'modified by inneer fun'
+        return str;
+    }
+
+    return innerFun;
+
+}
+
+const outerFun = closureFunction()
+
+console.log(outerFun());
+
+// Have to return the inner fun in the outer function after defining it.
+// if two functions, return them like a object with a key assignment to their names
+
