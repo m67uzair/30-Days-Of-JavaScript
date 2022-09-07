@@ -63,25 +63,55 @@ console.clear();
 // Create a closure which has three inner functions
 
 function funWith3Closures() {
-    let str= "Hi, ";
-    function name() {
-        str+="I'm M Uzair";
-        return str;
-    }
-    function education() {
-        return str+=", a software engineer";
-    }
-    function location() {
-        return str+=", from Pakistan.";
-    }
+  let str = "Hi, ";
+  function name() {
+    str += "I'm M Uzair";
+    return str;
+  }
+  function education() {
+    return (str += ", a software engineer");
+  }
+  function location() {
+    return (str += ", from Pakistan.");
+  }
 
-    return {
-        name : name(),
-        education: education(),
-        location: location()
-    }
+  return {
+    name: name(),
+    education: education(),
+    location: location(),
+  };
 }
 const meFun = funWith3Closures();
 console.log(meFun.name);
 console.log(meFun.education);
 console.log(meFun.location);
+
+function personAccountOut(params) {
+  let firstName, lastName, incomes = [], expenses;
+
+  function totalIncome() {
+    let totalPay = 0;
+    incomes.forEach(income => totalPay+=income);
+  }
+  function totalExpense() {
+    let totalDamage = 0;
+    incomes.forEach(damage => totalDamage+=damage);
+  }
+  function accountInfo() {}
+  function addIncome(obj) {
+    incomes.push(obj);
+    return `added ${obj}`
+  }
+  function addExpense() {}
+  function accountBalance() {}
+
+  return {
+    addIncome: addIncome(obj),
+    totalIncome: totalIncome(),
+  }
+
+}
+
+const inners = personAccountOut();
+
+console.log(inners.addIncome({'pado':'gado'}));
