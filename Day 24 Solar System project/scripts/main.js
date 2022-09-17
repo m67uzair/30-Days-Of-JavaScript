@@ -50,15 +50,15 @@ container.style.width = "80%";
 img.style.maxWidth = "80%";
 img.style.margin = "50px 0px";
 
-// descriptionDiv.style.display = "none";
+descriptionDiv.style.display = "none";
 descriptionDiv.style.backgroundColor = "rgba(255,255,255,0.25)";
 descriptionDiv.style.padding = "20px 200px";
-descriptionDiv.style.margin = "50px 30px";
+descriptionDiv.style.margin = "50px 10px";
 
-massDiv.style.borderRadius = "50%"
-massDiv.style.padding = "40px 30px"
-massDiv.style.backgroundColor = "black"
-console.log(massDiv.backgroundColor);
+massDiv.style.borderRadius = "50%";
+massDiv.style.padding = "40px 0px";
+massDiv.style.backgroundColor = "rgba(255,255,255,0.25)";
+massDiv.style.display = "none";
 
 buttonTag.addEventListener("click", (e) => {
   console.log(weightInput.value);
@@ -71,15 +71,140 @@ buttonTag.addEventListener("click", (e) => {
     img.style.display = "none";
     descriptionDiv.style.display = "block";
   } else if (selectTag.value == "none") {
-    descriptionPara.innerHTML = "You did not select a country";
+    descriptionPara.innerHTML = "You did not choose a planet";
     img.style.display = "none";
     descriptionDiv.style.display = "block";
-  }
-  else if(selectTag.value=="mercury"){
-    img.style.display = "block"
-    img.src = "images/mercury.png"
-    descriptionPara.innerHTML = "The weight of the object on <strong>MERCURY</strong>"
+
+  } else if (selectTag.value != "none") {
+
+    switch (selectTag.value) {
+
+      case "mercury":
+        img.style.display = "block";
+        img.src = "images/mercury.png";
+
+        descriptionDiv.style.display = "block";
+        descriptionPara.innerHTML =
+          "The weight of the object on <strong>MERCURY</strong>";
+
+        massDiv.style.display = "block";
+        massDiv.innerHTML = calculateWeight(weightInput.value, 3.7) + " N";
+
+        break;
+
+      case "venus":
+        img.style.display = "block";
+        img.src = "images/venus.png";
+        descriptionDiv.style.display = "block";
+        descriptionPara.innerHTML =
+          "The weight of the object on <strong>VENUS</strong>";
+
+        massDiv.style.display = "block";
+        massDiv.innerHTML = calculateWeight(weightInput.value, 8.87) + " N";
+
+        break;
+
+      case "mars":
+        img.style.display = "block";
+        img.src = "images/mars.png";
+        descriptionDiv.style.display = "block";
+
+        descriptionPara.innerHTML =
+          "The weight of the object on <strong>MARS</strong>";
+
+        massDiv.style.display = "block";
+        massDiv.innerHTML = calculateWeight(weightInput.value, 3.721) + " N";
+
+        break;
+
+      case "jupiter":
+        img.style.display = "block";
+        img.src = "images/jupiter.png";
+        descriptionDiv.style.display = "block";
+
+        descriptionPara.innerHTML =
+          "The weight of the object on <strong>JUPITER</strong>";
+
+        massDiv.style.display = "block";
+        massDiv.innerHTML = calculateWeight(weightInput.value, 24.79) + " N";
+        break;
+
+      case "earth":
+        img.style.display = "block";
+        img.src = "images/earth.png";
+        descriptionDiv.style.display = "block";
+
+        descriptionPara.innerHTML =
+          "The weight of the object on <strong>EARTH</strong>";
+
+        massDiv.style.display = "block";
+        massDiv.innerHTML = calculateWeight(weightInput.value, 9.807) + " N";
+
+        break;
+
+      case "saturn":
+        img.style.display = "saturn.png";
+        descriptionDiv.style.display = "block";
+
+        descriptionPara.innerHTML =
+          "The weight of the object on <strong>SATURN</strong>";
+
+        massDiv.style.display = "block";
+        massDiv.innerHTML = calculateWeight(weightInput.value, 10.44) + " N";
+
+        break;
+      case "uranus":
+        img.style.display = "block";
+        img.src = "images/uranus.png";
+        descriptionDiv.style.display = "block";
+
+        descriptionPara.innerHTML =
+          "The weight of the object on <strong>URANUS</strong>";
+
+        massDiv.style.display = "block";
+        massDiv.innerHTML = calculateWeight(weightInput.value, 8.87) + " N";
+
+        break;
+      case "neptune":
+        img.style.display = "block";
+        img.src = "images/neptune.png";
+        descriptionDiv.style.display = "block";
+
+        descriptionPara.innerHTML =
+          "The weight of the object on <strong>NEPTUNE</strong>";
+
+        massDiv.style.display = "block";
+        massDiv.innerHTML = calculateWeight(weightInput.value, 11.15) + " N";
+
+        break;
+
+      case "pluto":
+        img.style.display = "block";
+        img.src = "images/pluto.png";
+        descriptionDiv.style.display = "block";
+        descriptionPara.innerHTML =
+          "The weight of the object on <strong>PLUTO</strong>";
+
+        massDiv.style.display = "block";
+        massDiv.innerHTML = calculateWeight(weightInput.value, 0.62) + " N";
+
+        break;
+      case "moon":
+        img.style.display = "block";
+        img.src = "images/moon.png";
+        descriptionDiv.style.display = "block";
+        descriptionPara.innerHTML =
+          "The weight of the object on <strong>MOON</strong>";
+
+        massDiv.style.display = "block";
+        massDiv.innerHTML = calculateWeight(weightInput.value, 1.62) + " N";
+
+        break;
+
+      default:
+        break;
+    }
   }
 });
 
-//start from here
+let calculateWeight = (mass, g) => parseFloat(mass * g).toFixed(2);
