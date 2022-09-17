@@ -51,12 +51,14 @@ img.style.maxWidth = "80%";
 img.style.margin = "50px 0px";
 
 // descriptionDiv.style.display = "none";
-descriptionDiv.style.backgroundColor = "red";
-descriptionDiv.style.padding = "0px 80px";
+descriptionDiv.style.backgroundColor = "rgba(255,255,255,0.25)";
+descriptionDiv.style.padding = "20px 200px";
 descriptionDiv.style.margin = "50px 30px";
 
 massDiv.style.borderRadius = "50%"
-massDiv.backgroundColor = "blue"
+massDiv.style.padding = "40px 30px"
+massDiv.style.backgroundColor = "black"
+console.log(massDiv.backgroundColor);
 
 buttonTag.addEventListener("click", (e) => {
   console.log(weightInput.value);
