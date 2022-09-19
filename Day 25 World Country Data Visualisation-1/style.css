@@ -1,0 +1,17 @@
+body{
+    font-family: 'Montserrat';
+}
+header{
+    background-color: beige;
+    text-align: center;
+    padding: 1px 0px;
+}
+h1{
+    font-family: 'Montserrat';
+    color: greenyellow;
+    margin-bottom: 2px;
+}
+.subtitle{
+    padding: 0px;
+    margin: 0px;
+}
